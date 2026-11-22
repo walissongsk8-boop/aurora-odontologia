@@ -33,7 +33,7 @@ button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:t
 .hero p{max-width:410px;line-height:1.9;color:#61766a;font-size:14px}
 .hero-actions{display:flex;align-items:center;gap:28px;margin-top:37px}
 .hero-photo{position:relative;overflow:hidden;background:linear-gradient(140deg,#d9e2d8,#b9cbbd)}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:saturate(.78);transition:transform 1.2s}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:70% center;display:block;filter:saturate(.78);transition:transform 1.2s}
 .hero-photo:hover img{transform:scale(1.045)}
 .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#e8eee7 0%,transparent 18%),linear-gradient(0deg,#14392c60,transparent 45%);pointer-events:none}
 .hero-stamp{position:absolute;bottom:40px;right:45px;z-index:2;color:white;text-align:right;font-size:11px;letter-spacing:.12em}
@@ -78,7 +78,7 @@ button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:t
 .service-detail.open{display:block}
 .experience{display:grid;grid-template-columns:1fr 1fr;min-height:680px;background:#1e4338;color:#f2f2e9}
 .experience-image{background:#becfc1;min-height:530px}
-.experience-image img{filter:saturate(.65)}
+.experience-image img{filter:saturate(.85);object-fit:cover;object-position:center 48%}
 .split-copy{padding:95px 11% 80px;display:flex;flex-direction:column;justify-content:center}
 .split-copy .eyebrow{color:#c6d8c8}.split-copy h2{margin:27px 0}.split-copy h2 em{font-weight:400;color:#afc9b7}
 .split-copy p{line-height:1.9;color:#c4d4c8;font-size:14px;max-width:440px}.split-copy .pill{color:white;border-color:#b9d1c2;align-self:start;margin-top:35px}.split-copy .pill:hover{background:#e3ede3;color:#21483b}
@@ -97,7 +97,7 @@ button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:t
   height: 100%;
   min-height: 560px;
   object-fit: cover;
-  object-position: center;
+  object-position: center 18%;
   display: block;
   filter: saturate(.85);
 }
@@ -234,7 +234,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
           <h3>Cuidado que começa antes.</h3>
           <p>Do primeiro contato ao acompanhamento, tudo é pensado para transmitir clareza, segurança e atenção genuína.</p>
         </div>
-        <div class="mini-photo"><img src="./images/consultório_odontológico_moderno_e_sofisticado.png" alt="Dentista acolhendo paciente durante consulta" loading="lazy" decoding="async"></div>
+        <div class="mini-photo"><img src="./images/kari-bjorn-photography-Fdku_oMrDvk-unsplash.jpg" alt="Consultório odontológico moderno e iluminado" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </div>
@@ -271,7 +271,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
         </div>
       </article>
       <article class="service reveal">
-        <div class="service-img"><img loading="lazy" src="./images/kari-bjorn-photography-Fdku_oMrDvk-unsplash.jpg" alt="Sala de atendimento odontológico contemporânea" decoding="async"></div>
+        <div class="service-img"><img loading="lazy" src="./images/consultório_odontológico_moderno_e_sofisticado.png" alt="Sala de atendimento odontológico contemporânea" decoding="async"></div>
         <div class="service-body">
           <div class="eyebrow">03 / REABILITAÇÃO</div>
           <h3>Reabilitação oral</h3>
