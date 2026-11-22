@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f6f3ee">
+<meta name="theme-color" content="#eef2ec">
 <meta name="description" content="Aurora Odontologia — demonstração premium criada pela ÊxudusTech.">
 <title>Aurora — Odontologia Contemporânea | Experiência ÊxudusTech</title>
 
 
 
 <style>
-:root{--ink:#16332e;--muted:#677871;--cream:#f6f3ee;--sage:#dce8dd;--green:#244e42;--line:#d9ded7;--gold:#b19a70;--white:#fffdf8}
+:root{--ink:#16332e;--muted:#677871;--cream:#eef2ec;--sage:#dce8dd;--green:#244e42;--line:#d9ded7;--gold:#b19a70;--white:#eef2ec}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Avenir Next",Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
 button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{cursor:pointer}
 .shell{width:min(1280px,calc(100% - 90px));margin:auto}.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
@@ -32,8 +32,9 @@ button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:t
 .hero h1 em{font-style:italic;color:#789485}
 .hero p{max-width:410px;line-height:1.9;color:#61766a;font-size:14px}
 .hero-actions{display:flex;align-items:center;gap:28px;margin-top:37px}
-.hero-photo{position:relative;overflow:hidden;background:linear-gradient(140deg,#d9e2d8,#b9cbbd)}
-.hero-photo img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;filter:saturate(.9);transition:transform 1.2s}
+.hero-photo{position:relative;overflow:hidden;background:#e8eee7}
+.hero-photo img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;filter:saturate(.9);transition:transform 1.2s;position:relative;z-index:1;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(to right,transparent 0%,#000 7%,#000 93%,transparent 100%)}
+.hero-photo:before{content:"";position:absolute;inset:-22px;background:url("./images/consulta_odontológica_acolhedora_e_moderna.png") center/cover no-repeat;filter:blur(30px) saturate(.7);opacity:.42;pointer-events:none}
 .hero-photo:hover img{transform:none}
 .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#e8eee7 0%,transparent 18%),linear-gradient(0deg,#14392c60,transparent 45%);pointer-events:none}
 .hero-stamp{position:absolute;bottom:40px;right:45px;z-index:2;color:white;text-align:right;font-size:11px;letter-spacing:.12em}
@@ -52,11 +53,11 @@ button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:t
 .signature-left{position:relative;min-height:610px;overflow:hidden;background:#d6e1d7}
 .signature-left img,.mosaic img,.doctor-image img,.experience-image img,.service-img img{width:100%;height:100%;object-fit:cover;display:block}
 .signature-left:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,#15362b66 100%)}
-.signature-card{position:absolute;left:34px;bottom:34px;background:rgba(250,249,245,.92);backdrop-filter:blur(10px);padding:24px 26px;max-width:320px;z-index:2}
+.signature-card{position:absolute;left:34px;bottom:34px;background:rgba(238,242,236,.94);backdrop-filter:blur(10px);padding:24px 26px;max-width:320px;z-index:2}
 .signature-card h3{font-family:Georgia,serif;font-size:32px;margin:0 0 10px;font-weight:400}
 .signature-card p{margin:0;color:#687a71;line-height:1.75;font-size:13px}
 .signature-right{display:grid;grid-template-rows:1fr 1fr;gap:22px}
-.mini-panel{background:#ffffff8c;padding:28px;border:1px solid #e2e7e0;display:flex;flex-direction:column;justify-content:space-between;min-height:294px}
+.mini-panel{background:#e3ebe2;padding:28px;border:1px solid #e2e7e0;display:flex;flex-direction:column;justify-content:space-between;min-height:294px}
 .mini-panel h3{font-family:Georgia,serif;font-size:34px;font-weight:400;letter-spacing:-.04em;margin:10px 0 14px}
 .mini-panel p{font-size:14px;line-height:1.85;color:#6a7d74;margin:0}
 .mini-photo{margin-top:20px;height:160px;overflow:hidden}
@@ -65,7 +66,7 @@ button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:t
 .heading{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:55px}
 .heading h2{margin-top:19px}.heading p{max-width:330px;line-height:1.8;color:#62766d;font-size:13px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.service{background:#f8f7f3;min-height:430px;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.service{background:#eef2ec;min-height:430px;display:flex;flex-direction:column;overflow:hidden;transition:transform .3s,box-shadow .3s}
 .service:hover{transform:translateY(-7px);box-shadow:0 20px 45px #193e2a14}
 .service-img{height:230px;overflow:hidden;background:#cfdad1}
 .service-img img{filter:saturate(.7);transition:transform .6s}.service:hover img{transform:scale(1.06)}
@@ -88,7 +89,7 @@ button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:t
 .mosaic .tall{grid-row:span 2}.mosaic .wide{grid-column:span 2}
 .mosaic figure{margin:0;overflow:hidden;position:relative;background:#d5dfd5}
 .mosaic img{filter:saturate(.8);transition:transform .7s}.mosaic figure:hover img{transform:scale(1.05)}
-.mosaic figcaption{position:absolute;left:18px;bottom:18px;background:#fffef9d8;padding:8px 12px;font-size:11px;letter-spacing:.08em}
+.mosaic figcaption{position:absolute;left:18px;bottom:18px;background:#eef2eced;padding:8px 12px;font-size:11px;letter-spacing:.08em}
 .doctor-section{background:#eef2ec}
 .doctor-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
 .doctor-image{min-height:560px;overflow:hidden;background:#d4ddd4}
@@ -112,13 +113,13 @@ button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:t
 .footer-bottom{margin-top:65px;border-top:1px solid #466659;padding-top:20px;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:#a6c0ae}.footer-bottom a{display:inline;color:#d8f4dd}
 .reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:translateY(0)}
 .modal{position:fixed;inset:0;background:#0a211db8;z-index:30;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(5px)}.modal.open{display:flex}
-.modal-panel{position:relative;background:#faf9f5;color:var(--ink);padding:42px;width:min(540px,100%);max-height:92vh;overflow:auto;box-shadow:0 30px 90px #0004}
+.modal-panel{position:relative;background:#eef2ec;color:var(--ink);padding:42px;width:min(540px,100%);max-height:92vh;overflow:auto;box-shadow:0 30px 90px #0004}
 .modal-close{position:absolute;top:17px;right:18px;background:none;border:0;font-size:27px;color:#425d51}
 .modal-panel h2{font-family:Georgia,serif;font-size:42px;font-weight:400;letter-spacing:-.05em;margin:12px 0}.modal-panel p{font-size:13px;color:#657a6e;line-height:1.7}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px;margin:12px 0}.field label{font-size:11px;font-weight:700}
-.field input,.field select,.field textarea{width:100%;border:1px solid #cbd5ca;background:#fff;padding:13px 12px;border-radius:2px;color:#1d3c32;outline-color:#608b74}.field textarea{min-height:95px;resize:vertical}
+.field input,.field select,.field textarea{width:100%;border:1px solid #cbd5ca;background:#f7faf6;padding:13px 12px;border-radius:2px;color:#1d3c32;outline-color:#608b74}.field textarea{min-height:95px;resize:vertical}
 .modal-panel .pill{width:100%;margin-top:16px}.success{display:none;padding:20px;background:#e6eee4;margin-top:15px;line-height:1.7;font-size:13px}
-.demo-ribbon{position:fixed;bottom:17px;left:17px;z-index:20;background:#fffdf1f2;border:1px solid #ded9c8;padding:10px 14px;box-shadow:0 6px 25px #0001;font-size:10px;letter-spacing:.04em;max-width:240px}.demo-ribbon b{display:block;font-size:11px;margin-bottom:3px}
+.demo-ribbon{position:fixed;bottom:17px;left:17px;z-index:20;background:#eef2ecf2;border:1px solid #ded9c8;padding:10px 14px;box-shadow:0 6px 25px #0001;font-size:10px;letter-spacing:.04em;max-width:240px}.demo-ribbon b{display:block;font-size:11px;margin-bottom:3px}
 .floating{position:fixed;bottom:18px;right:18px;z-index:21;background:#244e42;color:white;border:0;border-radius:60px;padding:17px 24px;box-shadow:0 12px 35px #122c2366;font-size:12px;font-weight:700}.floating:hover{background:#396c59}
 .menu-panel{display:none}
 @media(max-width:950px){
