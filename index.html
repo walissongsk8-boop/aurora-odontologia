@@ -143,6 +143,16 @@ body{overflow-x:hidden}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ba9870;outline-offset:3px}
 @media(max-width:600px){.hero h1{font-size:clamp(45px,12vw,65px)}.hero-photo{height:450px}.hero-stamp{bottom:25px;right:22px}.hero-stamp strong{font-size:25px}.signature-left{min-height:470px}.signature-card{left:15px;bottom:15px;right:15px;padding:20px}.signature-card h3{font-size:28px}.stats{gap:12px}.stat strong{font-size:31px}.mini-panel{padding:21px}}
 @media(prefers-reduced-motion:reduce){.marquee-inner{animation:none}.reveal{opacity:1;transform:none}}
+
+/* Agendamento demonstrativo e perguntas frequentes */
+.booking-note{margin:12px 0 18px;padding:13px 16px;border-left:3px solid #779c85;background:#e3ecdf;color:#375b4b;font-size:12px;line-height:1.7}
+.booking-steps{display:flex;gap:8px;margin:18px 0 24px}.booking-steps span{flex:1;height:4px;background:#c3d5c5;border-radius:10px}.booking-steps span.active{background:#315d4d}
+.field input[type=date]{min-height:49px;color-scheme:light}.field select:disabled{opacity:.55;cursor:not-allowed}
+.booking-actions{display:flex;gap:12px;align-items:center;margin-top:18px}.booking-actions .pill{flex:1;margin-top:0}.booking-actions .pill.secondary{background:transparent;color:var(--ink)}
+.booking-summary{background:#e4eee1;padding:22px;border:1px solid #b9d0bd;line-height:1.85;font-size:14px}.booking-summary strong{display:block;font-family:Georgia,serif;font-size:27px;font-weight:400;margin-bottom:8px}.booking-summary p{margin:8px 0;color:#375b4b}
+.faq{padding:110px 0}.faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:start}.faq h2{font-size:clamp(42px,5vw,70px);line-height:1.05;margin:20px 0}.faq-item{border-top:1px solid #b8cbb9}.faq-item:last-child{border-bottom:1px solid #b8cbb9}.faq-item summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:23px 0;font-size:16px;font-weight:650}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:after{content:"+";font-size:26px;font-weight:300}.faq-item[open] summary:after{content:"−"}.faq-item p{margin:0 0 22px;color:#61766a;font-size:14px;line-height:1.85;max-width:650px}
+@media(max-width:950px){.faq-grid{grid-template-columns:1fr;gap:25px}.faq{padding:75px 0}}
+@media(max-width:600px){.booking-actions{flex-direction:column}.booking-actions .pill{width:100%}.modal-panel{max-height:90dvh}}
 </style>
 </head>
 <body>
@@ -345,6 +355,18 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
   </div>
 </section>
 
+<section class="faq shell" id="duvidas" aria-labelledby="faq-title">
+  <div class="faq-grid">
+    <div class="reveal"><div class="eyebrow">07 / INFORMAÇÕES</div><h2 class="serif" id="faq-title">Suas dúvidas,<br><em>com clareza.</em></h2><p style="color:#61766a;line-height:1.9;max-width:380px">Uma experiência acolhedora também começa com informações simples e acessíveis.</p></div>
+    <div class="reveal">
+      <details class="faq-item"><summary>Como funciona a primeira avaliação?</summary><p>Em uma clínica real, o primeiro encontro permite conhecer as necessidades do paciente e discutir os próximos passos. Nesta demonstração, não são realizadas consultas.</p></details>
+      <details class="faq-item"><summary>Posso escolher o tratamento pelo site?</summary><p>Você pode indicar uma área de interesse. A indicação de procedimentos depende sempre de avaliação individual por profissional habilitado.</p></details>
+      <details class="faq-item"><summary>O agendamento é confirmado automaticamente?</summary><p>Não. Este site é um conceito de portfólio da ÊxudusTech. A escolha de data e horário apenas demonstra uma interface de solicitação, sem consultar agenda real.</p></details>
+      <details class="faq-item"><summary>Meus dados são enviados para alguém?</summary><p>Não. Os dados preenchidos na simulação permanecem apenas na página durante a interação; não são enviados nem armazenados.</p></details>
+    </div>
+  </div>
+</section>
+
 <section class="booking-banner">
   <div class="eyebrow">SEU PRÓXIMO CAPÍTULO COMEÇA AQUI</div>
   <h2 class="serif">Existe um sorriso<br><em>esperando por você.</em></h2>
@@ -383,64 +405,48 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 
 <div class="modal" id="booking" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-panel">
-    <button class="modal-close" aria-label="Fechar">×</button>
-    <div class="eyebrow">SUA JORNADA COMEÇA AQUI</div>
-    <h2 id="modal-title">Vamos conversar?</h2>
-    <p>Simule um pedido de avaliação. Os dados não serão enviados nem armazenados.</p>
+    <button class="modal-close" aria-label="Fechar janela">×</button>
+    <div class="eyebrow">AURORA / EXPERIÊNCIA INTERATIVA</div>
+    <h2 id="modal-title">Sua visita começa aqui.</h2>
+    <p>Experimente um agendamento digital elegante, como seria em uma clínica moderna.</p>
+    <div class="booking-note" role="note"><strong>Simulação de portfólio.</strong> Datas e horários são ilustrativos, não representam disponibilidade real. Nada será enviado ou armazenado.</div>
+    <div class="booking-steps" aria-label="Etapas da simulação"><span class="active"></span><span></span></div>
     <form id="booking-form">
       <div class="form-grid">
-        <div class="field"><label for="person">Seu nome</label><input id="person" name="person" required maxlength="80" placeholder="Como podemos chamar você?"></div>
-        <div class="field"><label for="phone">Telefone (opcional)</label><input id="phone" name="phone" type="tel" maxlength="20" placeholder="(00) 00000-0000"></div>
+        <div class="field"><label for="person">Seu nome *</label><input id="person" name="person" required maxlength="80" autocomplete="name" placeholder="Como podemos chamar você?"></div>
+        <div class="field"><label for="phone">Telefone (opcional)</label><input id="phone" name="phone" type="tel" maxlength="20" autocomplete="tel" placeholder="(00) 00000-0000"></div>
       </div>
-      <div class="field"><label for="service">Interesse</label>
+      <div class="field"><label for="service">Qual cuidado procura? *</label>
         <select id="service" name="service" required>
-          <option value="">Selecione uma opção</option>
-          <option>Estética dental</option>
-          <option>Saúde preventiva</option>
-          <option>Reabilitação oral</option>
-          <option>Avaliação geral</option>
+          <option value="">Selecione uma opção</option><option>Estética dental</option><option>Saúde preventiva</option><option>Reabilitação oral</option><option>Avaliação geral</option>
         </select>
       </div>
-      <div class="field"><label for="period">Período preferido</label>
-        <select id="period" name="period" required>
-          <option value="">Selecione uma opção</option>
-          <option>Manhã</option>
-          <option>Tarde</option>
-          <option>Sem preferência</option>
-        </select>
+      <div class="form-grid">
+        <div class="field"><label for="visit-date">Data desejada *</label><input id="visit-date" name="visit-date" type="date" required></div>
+        <div class="field"><label for="visit-time">Horário ilustrativo *</label><select id="visit-time" name="visit-time" required disabled><option value="">Escolha uma data primeiro</option></select></div>
       </div>
-      <button class="pill dark" type="submit">Simular solicitação ↗</button>
+      <p style="font-size:11px;color:#62766d;margin:8px 0">Os horários são exemplos de interface, não vagas disponíveis. Domingos não são selecionáveis.</p>
+      <div class="booking-actions"><button class="pill dark" type="submit">Visualizar solicitação ↗</button></div>
     </form>
-    <div class="success" id="success" role="status"></div>
+    <div class="success" id="success" role="status" aria-live="polite"></div>
   </div>
 </div>
 
 <script>
 const modal=document.getElementById('booking'),form=document.getElementById('booking-form'),success=document.getElementById('success');let previousFocus=null;
-function openModal(){previousFocus=document.activeElement;modal.classList.add('open');document.body.style.overflow='hidden';success.style.display='none';form.style.display='block';modal.querySelector('.modal-close').focus()}
-function closeModal(){modal.classList.remove('open');document.body.style.overflow='';if(previousFocus)previousFocus.focus()}
+const dateInput=document.getElementById('visit-date'),timeInput=document.getElementById('visit-time');
+const pad=n=>String(n).padStart(2,'0');
+function localISO(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function setDateBounds(){const today=new Date();today.setHours(12,0,0,0);const tomorrow=new Date(today);tomorrow.setDate(today.getDate()+1);const limit=new Date(today);limit.setDate(today.getDate()+90);dateInput.min=localISO(tomorrow);dateInput.max=localISO(limit)}
+function resetTimes(){timeInput.innerHTML='<option value="">Escolha uma data primeiro</option>';timeInput.disabled=true;if(!dateInput.value)return;const parts=dateInput.value.split('-').map(Number);if(parts.length!==3)return;const chosen=new Date(parts[0],parts[1]-1,parts[2],12);if(localISO(chosen)!==dateInput.value||chosen.getDay()===0){dateInput.setCustomValidity('Escolha uma data válida de segunda a sábado.');dateInput.reportValidity();return}dateInput.setCustomValidity('');const hours=chosen.getDay()===6?['08:00','09:00','10:00','11:00']:['08:00','09:00','10:00','11:00','14:00','15:00','16:00','17:00'];timeInput.innerHTML='<option value="">Selecione um horário ilustrativo</option>'+hours.map(h=>'<option value="'+h+'">'+h+'</option>').join('');timeInput.disabled=false}
+dateInput.addEventListener('change',resetTimes);
+function openModal(){previousFocus=document.activeElement;setDateBounds();dateInput.setCustomValidity('');modal.classList.add('open');document.body.style.overflow='hidden';success.style.display='none';form.style.display='block';modal.querySelectorAll('.booking-steps span').forEach((el,i)=>el.classList.toggle('active',i===0));modal.querySelector('.modal-close').focus()}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow='';form.reset();resetTimes();dateInput.setCustomValidity('');if(previousFocus&&previousFocus.focus)previousFocus.focus()}
 document.querySelectorAll('[data-book]').forEach(b=>b.addEventListener('click',openModal));
 modal.querySelector('.modal-close').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();
-  if(e.key==='Tab'&&modal.classList.contains('open')){
-    const f=[...modal.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled])')].filter(el=>el.offsetParent!==null);
-    if(!f.length)return;
-    if(e.shiftKey&&document.activeElement===f[0]){e.preventDefault();f[f.length-1].focus()}
-    else if(!e.shiftKey&&document.activeElement===f[f.length-1]){e.preventDefault();f[0].focus()}
-  }
-});
-form.addEventListener('submit',e=>{
-  e.preventDefault();
-  if(!form.reportValidity())return;
-  const name=document.getElementById('person').value.trim();
-  const service=document.getElementById('service').value;
-  const period=document.getElementById('period').value;
-  form.style.display='none';
-  success.textContent=`Solicitação demonstrativa preparada para ${name}: ${service}, preferência ${period.toLowerCase()}. Nenhum agendamento foi realizado e nenhum dado foi enviado.`;
-  success.style.display='block';
-});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();if(e.key==='Tab'&&modal.classList.contains('open')){const controls=[...modal.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled])')].filter(el=>el.getClientRects().length);if(!controls.length)return;if(e.shiftKey&&document.activeElement===controls[0]){e.preventDefault();controls[controls.length-1].focus()}else if(!e.shiftKey&&document.activeElement===controls[controls.length-1]){e.preventDefault();controls[0].focus()}}});
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const name=document.getElementById('person').value.trim(),service=document.getElementById('service').value,day=dateInput.value,time=timeInput.value;if(!name||!time)return;const [y,m,d]=day.split('-').map(Number);const displayDate=pad(d)+'/'+pad(m)+'/'+y;form.style.display='none';success.innerHTML='';const title=document.createElement('strong');title.textContent='Sua solicitação ilustrativa';const details=document.createElement('p');details.textContent=name+' · '+service+' · '+displayDate+' às '+time;const note=document.createElement('p');note.textContent='Esta é uma demonstração. Nenhum horário foi reservado e nenhuma informação foi enviada ou armazenada.';const again=document.createElement('button');again.type='button';again.className='pill';again.textContent='Fazer outra simulação';again.addEventListener('click',()=>{form.reset();resetTimes();form.style.display='block';success.style.display='none';modal.querySelectorAll('.booking-steps span').forEach((el,i)=>el.classList.toggle('active',i===0));document.getElementById('person').focus()});success.append(title,details,note,again);success.classList.add('booking-summary');success.style.display='block';modal.querySelectorAll('.booking-steps span').forEach(el=>el.classList.add('active'));again.focus()});
 document.querySelectorAll('.details').forEach(b=>b.addEventListener('click',()=>{
   const d=b.nextElementSibling;const open=d.classList.toggle('open');
   b.setAttribute('aria-expanded',String(open));
